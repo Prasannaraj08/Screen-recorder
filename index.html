@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raj Screen Recorder with Mic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #121212; color: white; padding: 1.5rem; }
+    header { text-align: center; padding: 1rem 0; background-color: #1db954; color: #121212; font-size: 1.8rem; font-weight: bold; border-radius: 10px; }
+    .service-info { margin-top: 2rem; background-color: #1e1e1e; padding: 1.5rem; border-radius: 12px; text-align: center; }
+    .service-info h2 { color: #1db954; margin-bottom: 0.8rem; }
+    .service-info p { color: #cccccc; font-size: 1rem; line-height: 1.6; }
+    .mic-toggle { margin: 1.5rem 0; display: flex; justify-content: center; align-items: center; gap: 1rem; }
+    .mic-toggle label { font-size: 1rem; color: #cccccc; }
+    .mic-toggle input[type="checkbox"] {
+      width: 40px; height: 20px; appearance: none; background-color: #555;
+      outline: none; border-radius: 20px; position: relative; cursor: pointer;
+    }
+    .mic-toggle input[type="checkbox"]::before {
+      content: ''; position: absolute; width: 18px; height: 18px;
+      background-color: white; border-radius: 50%; top: 1px; left: 1px; transition: 0.3s;
+    }
+    .mic-toggle input[type="checkbox"]:checked { background-color: #1db954; }
+    .mic-toggle input[type="checkbox"]:checked::before { transform: translateX(20px); }
+    .buttons { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+    .btn {
+      padding: 0.9rem 2rem; background-color: #1db954; color: #121212;
+      border: none; border-radius: 25px; font-weight: bold; font-size: 1rem;
+      cursor: pointer; width: 80%; max-width: 300px; transition: background 0.3s ease;
+    }
+    .btn:hover { background-color: #17a74a; }
+    footer { margin-top: 3rem; text-align: center; font-size: 0.85rem; color: #888; }
+  </style>
+</head>
+<body>
+
+  <header>Raj Groups Recorder</header>
+
+  <div class="service-info">
+    <h2>Screen Recorder with Mic</h2>
+    <p>Record your screen activities with optional mic audio. Perfect for tutorials, gameplay, and presentations.</p>
+  </div>
+
+  <div class="mic-toggle">
+    <label for="mic">Mic Audio</label>
+    <input type="checkbox" id="mic" />
+  </div>
+
+  <div class="buttons">
+    <button class="btn" onclick="startRecording()">Start Recording</button>
+    <button class="btn" onclick="stopRecording()">Stop Recording</button>
+  </div>
+
+  <footer>&copy; 2025 Raj Groups. All rights reserved.</footer>
+
+  <script>
+    function startRecording() {
+      const micEnabled = document.getElementById('mic').checked;
+      alert("Recording started. Mic: " + (micEnabled ? "On" : "Off"));
+    }
+    function stopRecording() {
+      alert("Recording stopped.");
+    }
+  </script>
+
+</body>
+</html>
